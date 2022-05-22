@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+
+{% block title %} formularios en django {% endblock %}
+
+{% block content %}
+<div class="Article">
+<h1 class="title">formularios en django</h1>
+
+{% if form.errors %}
+    <strong class = 'rojo'>
+        Hay un error en el formulario
+    </strong>
+{% endif %}
+
+<form action="" method="POST">
+
+    {% csrf_token %} 
+
+    {{ form.as_p }}
+
+
+    {% comment %} <img class="Article__picture" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Soccer_ball.svg/600px-Soccer_ball.svg.png" /> {% endcomment %}
+
+
+    <input class="Article__submit" type="submit" value="Guardar" />
+
+
+</form>
+</div>
+
+{% endblock %}

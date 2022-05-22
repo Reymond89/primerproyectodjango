@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+
+{% block title %} pagina de pruebas {% endblock %}
+
+{% block content %}
+<h1 class="title">Pagina de mi Web</h1>
+<p>{{"Creado por Reymond Caceres ñ" |cut:"ñ" }}</p>
+
+{{texto|default:"No hay nada"}}
+
+<p>
+{{lista|join:', '}}
+</p>
+
+<p>
+    {{lista|random}}
+    </p>
+
+<p>
+    {{lista|length}}
+</p>
+
+<p>
+    {{texto|lower}}
+</p>
+
+<p>
+    {{"<h1>texto</h1> <strong>pruebas</strong> hola <p> mundo </p>"|striptags|wordcount}}
+</p>
+
+{% load filters %}
+{{"Caceres Reymond WEB"|saludo|safe}} 
+
+{% endblock %}

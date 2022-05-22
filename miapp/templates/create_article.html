@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+
+{% block title %} formularios en django {% endblock %}
+
+{% block content %}
+<div class="Article">
+<h1 class="title">formularios en django</h1>
+
+<form action="{% url 'save' %}" method="POST">
+
+    {% csrf_token %} 
+
+    <label for="title">TITULO</label>
+    <input type="text" name="title" placeholder= "mete tu nombre" /> 
+
+    <label for="title">Contenido</label>
+    <textarea type="text" name="content" rows="10"></textarea> 
+
+    <label for="public">¿publicado?</label>
+    <select name="public">
+        <option value="1">si</option>
+        <option value="0">No</option>
+    </select>
+
+
+    {% comment %} <img class="Article__picture" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Soccer_ball.svg/600px-Soccer_ball.svg.png" /> {% endcomment %}
+
+
+    <input class="Article__submit" type="submit" value="Guardar" />
+
+
+</form>
+</div>
+
+{% endblock %}

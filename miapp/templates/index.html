@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% block title %} {{title}} {% endblock %}
+
+{% block content %}
+
+{% include  'fecha-actual.html' %} 
+
+
+<!-- Esto es un comentario en html     -->
+{% comment 'Nota para el comentario'%} 
+<h1> Hola hola </h1>
+{% endcomment %}
+
+<h1 class="title">{{title}}<h1>
+
+
+{% if nombre and nombre == 'Reymond caceres'%}
+    <p>{{nombre}}</p>
+ 
+{% else %} 
+
+    <strong> El nombre no existe </strong>
+    
+{% endif %} 
+<h3>Listado de lenguajes de programacion</h3>
+<ul>
+        {% for lenguajes in lenguajes %} 
+        <li> {{forloop.counter}} . {{lenguajes}} </li>  
+        {% empty %}
+            <p>NO HAY LENGUAJES QUE MOSTRAR</p>
+        {% endfor %}   
+<ul/>   
+
+
+{% include  'fecha-actual.html' with saludo="hola mundo desde plantilla" %}
+
+{% endblock %}
+
+
+    
